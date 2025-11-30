@@ -44,7 +44,8 @@ jobs:
           -DCMAKE_SYSTEM_NAME=Linux \
           -DCMAKE_SYSTEM_PROCESSOR=arm64 \
           -DCMAKE_C_COMPILER=aarch64-linux-gnu-gcc \
-          -Dwolfssl_DIR=${{ env.VCPKG_PATH }}/installed/arm64-linux/share/wolfssl
+          -Dwolfssl_DIR=${{ env.VCPKG_PATH }}/installed/arm64-linux/share/wolfssl \
+          -DUTHASH_INCLUDE_DIRS=${{ env.VCPKG_PATH }}/installed/arm64-linux/include
 
     - name: Build
       run: |
