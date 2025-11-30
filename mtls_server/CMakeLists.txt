@@ -5,7 +5,6 @@ set(CMAKE_C_STANDARD 99)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 
 find_package(wolfssl REQUIRED)
-find_path(UTHASH_INCLUDE_DIRS "utarray.h")
 
 set(CMAKE_EXE_LINKER_FLAGS "-static")
 
@@ -21,6 +20,7 @@ add_executable(mtls_server
     log.c
 )
 
+find_path(UTHASH_INCLUDE_DIRS "utarray.h")
 target_include_directories(mtls_server PRIVATE
     ${UTHASH_INCLUDE_DIRS}
 )
